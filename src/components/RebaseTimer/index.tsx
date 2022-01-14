@@ -5,6 +5,7 @@ import "./rebasetimer.scss";
 import { Skeleton } from "@material-ui/lab";
 import { useMemo } from "react";
 import { IReduxState } from "../../store/slices/state.interface";
+import React from "react";
 
 function RebaseTimer() {
     const currentBlockTime = useSelector<IReduxState, number>(state => {
