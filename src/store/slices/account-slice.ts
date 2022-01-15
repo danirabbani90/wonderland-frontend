@@ -289,7 +289,7 @@ const accountSlice = createSlice({
             })
             .addCase(loadAccountDetails.rejected, (state, { error }) => {
                 state.loading = false;
-                console.log(error);
+                // console.log(error);
             })
             .addCase(getBalances.pending, state => {
                 state.loading = true;
@@ -300,7 +300,7 @@ const accountSlice = createSlice({
             })
             .addCase(getBalances.rejected, (state, { error }) => {
                 state.loading = false;
-                console.log(error);
+                // console.log(error);
             })
             .addCase(calculateUserBondDetails.pending, (state, action) => {
                 state.loading = true;
@@ -313,7 +313,7 @@ const accountSlice = createSlice({
             })
             .addCase(calculateUserBondDetails.rejected, (state, { error }) => {
                 state.loading = false;
-                console.log(error);
+                // console.log(error);
             })
             .addCase(calculateUserTokenDetails.pending, (state, action) => {
                 state.loading = true;
@@ -326,7 +326,7 @@ const accountSlice = createSlice({
             })
             .addCase(calculateUserTokenDetails.rejected, (state, { error }) => {
                 state.loading = false;
-                console.log(error);
+                // console.log(error);
             });
     },
 });

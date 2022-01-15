@@ -114,21 +114,21 @@ export const calcBondDetails = createAsyncThunk("bonding/calcBondDetails", async
 
     let marketPrice = await getMarketPrice(networkID, provider);
 
-    const mimPrice = getTokenPrice("MIM");
+    const mimPrice = getTokenPrice("BUSD");
     marketPrice = (marketPrice / Math.pow(10, 9)) * mimPrice;
 
-    try {
-        bondPrice = await bondContract.bondPriceInUSD();
+    // try {
+    //     bondPrice = await bondContract.bondPriceInUSD();
 
-        if (bond.name === avaxTime.name) {
-            const avaxPrice = getTokenPrice("AVAX");
-            bondPrice = bondPrice * avaxPrice;
-        }
+    //     if (bond.name === avaxTime.name) {
+    //         const avaxPrice = getTokenPrice("BINANCE");
+    //         bondPrice = bondPrice * avaxPrice;
+    //     }
 
-        bondDiscount = (marketPrice * Math.pow(10, 18) - bondPrice) / bondPrice;
-    } catch (e) {
-        console.log("error getting bondPriceInUSD", e);
-    }
+    //     bondDiscount = (marketPrice * Math.pow(10, 18) - bondPrice) / bondPrice;
+    // } catch (e) {
+    //     console.log("error getting bondPriceInUSD", e);
+    // }
 
     let maxBondPriceToken = 0;
     const maxBodValue = ethers.utils.parseEther("1");
@@ -165,7 +165,7 @@ export const calcBondDetails = createAsyncThunk("bonding/calcBondDetails", async
         purchased = (markdown / Math.pow(10, 18)) * (purchased / Math.pow(10, 9));
 
         if (bond.name === avaxTime.name) {
-            const avaxPrice = getTokenPrice("AVAX");
+            const avaxPrice = getTokenPrice("BINANCE");
             purchased = purchased * avaxPrice;
         }
     } else {
@@ -175,7 +175,7 @@ export const calcBondDetails = createAsyncThunk("bonding/calcBondDetails", async
         purchased = purchased / Math.pow(10, 18);
 
         if (bond.name === wavax.name) {
-            const avaxPrice = getTokenPrice("AVAX");
+            const avaxPrice = getTokenPrice("BINANCE");
             purchased = purchased * avaxPrice;
         }
     }
@@ -327,7 +327,7 @@ const bondingSlice = createSlice({
             })
             .addCase(calcBondDetails.rejected, (state, { error }) => {
                 state.loading = false;
-                console.log(error);
+                // console.log(error);
             });
     },
 });

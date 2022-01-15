@@ -18,24 +18,24 @@ export const mim = new StableBond({
     reserveContractAbi: StableReserveContract,
     networkAddrs: {
         [Networks.AVAX]: {
-            bondAddress: "0x694738E0A438d90487b4a549b201142c1a97B556",
-            reserveAddress: "0x130966628846BFd36ff31a822705796e8cb8C18D",
+            bondAddress: "0xF96D3a132C976E4bbb1365EF85DaE970Dd82F6F7",
+            reserveAddress: "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7",
         },
     },
     tokensInStrategy: "60500000000000000000000000",
 });
 
 export const wavax = new CustomBond({
-    name: "wavax",
-    displayName: "wAVAX",
-    bondToken: "AVAX",
+    name: "wBNB",
+    displayName: "wBNB",
+    bondToken: "BINANCE",
     bondIconSvg: AvaxIcon,
     bondContractABI: WavaxBondContract,
     reserveContractAbi: StableReserveContract,
     networkAddrs: {
         [Networks.AVAX]: {
-            bondAddress: "0xE02B1AA2c4BE73093BE79d763fdFFC0E3cf67318",
-            reserveAddress: "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
+            bondAddress: "0x2Cb2C4375481D3A45C68c0AFAcc801f6326853D0",
+            reserveAddress: "0xae13d989dac2f0debff460ac112a837c89baa7cd",
         },
     },
     tokensInStrategy: "756916000000000000000000",
@@ -50,8 +50,8 @@ export const mimTime = new LPBond({
     reserveContractAbi: LpReserveContract,
     networkAddrs: {
         [Networks.AVAX]: {
-            bondAddress: "0xA184AE1A71EcAD20E822cB965b99c287590c4FFe",
-            reserveAddress: "0x113f413371fc4cc4c9d6416cf1de9dfd7bf747df",
+            bondAddress: "0xf4E8a86aDA1a9B430aedb6FC83548D8D18f6aFB6",
+            reserveAddress: "0x9cb21bd745529feb0328a619c06f63ff708e385a",
         },
     },
     lpUrl: "https://www.traderjoexyz.com/#/pool/0x130966628846BFd36ff31a822705796e8cb8C18D/0xb54f16fB19478766A268F172C9480f8da1a7c9C3",
@@ -66,8 +66,8 @@ export const avaxTime = new CustomLPBond({
     reserveContractAbi: LpReserveContract,
     networkAddrs: {
         [Networks.AVAX]: {
-            bondAddress: "0xc26850686ce755FFb8690EA156E5A6cf03DcBDE1",
-            reserveAddress: "0xf64e1c5B6E17031f5504481Ac8145F4c3eab4917",
+            bondAddress: "0x8F4Bc2B3c60FD1a611C2c62ed979B6D7Af74660D",
+            reserveAddress: "0xf8d3e17854828b71edf7616036c5ad62936d9e39",
         },
     },
     lpUrl: "https://www.traderjoexyz.com/#/pool/AVAX/0xb54f16fB19478766A268F172C9480f8da1a7c9C3",
