@@ -33,25 +33,19 @@ export const loadAppDetails = createAsyncThunk(
         const stakingTVL = circSupply * marketPrice;
         const marketCap = totalSupply * marketPrice;
 
-        const tokenBalPromises = allBonds.map(bond => {
-            const result = bond.getTreasuryBalance(networkID, provider);
-            console.log({ bond, result });
-            return result;
-        });
-        // const tokenBalances = await Promise.all(tokenBalPromises);
-        // const treasuryBalance = tokenBalances.reduce((tokenBalance0, tokenBalance1) => tokenBalance0 + tokenBalance1, 0);
-        // console.log({ treasuryBalance });
-        // const tokenAmountsPromises = allBonds.map(bond => bond.getTokenAmount(networkID, provider));
-        // const tokenAmounts = await Promise.all(tokenAmountsPromises);
-        // const rfvTreasury = tokenAmounts.reduce((tokenAmount0, tokenAmount1) => tokenAmount0 + tokenAmount1, 0);
-        // console.log({ rfvTreasury });
+        const tokenBalPromises = allBonds.map(bond => bond.getTreasuryBalance(networkID, provider));
+        const tokenBalances = await Promise.all(tokenBalPromises);
+        const treasuryBalance = tokenBalances.reduce((tokenBalance0, tokenBalance1) => tokenBalance0 + tokenBalance1, 0);
+        const tokenAmountsPromises = allBonds.map(bond => bond.getTokenAmount(networkID, provider));
+        const tokenAmounts = await Promise.all(tokenAmountsPromises);
+        const rfvTreasury = tokenAmounts.reduce((tokenAmount0, tokenAmount1) => tokenAmount0 + tokenAmount1, 0);
 
         const timeBondsAmountsPromises = allBonds.map(bond => bond.getTimeAmount(networkID, provider));
         const timeBondsAmounts = await Promise.all(timeBondsAmountsPromises);
         const timeAmount = timeBondsAmounts.reduce((timeAmount0, timeAmount1) => timeAmount0 + timeAmount1, 0);
         const timeSupply = totalSupply - timeAmount;
 
-        // const rfv = rfvTreasury / timeSupply;
+        const rfv = rfvTreasury / timeSupply;
 
         const epoch = await stakingContract.epoch();
         const stakingReward = epoch.distribute;
@@ -61,11 +55,10 @@ export const loadAppDetails = createAsyncThunk(
         const stakingAPY = Math.pow(1 + stakingRebase, 365 * 3) - 1;
 
         const currentIndex = await stakingContract.index();
-        console.log({ currentIndex });
         const nextRebase = epoch.endTime;
 
-        // const treasuryRunway = rfvTreasury / circSupply;
-        // const runway = Math.log(treasuryRunway) / Math.log(1 + stakingRebase) / 3;
+        const treasuryRunway = rfvTreasury / circSupply;
+        const runway = Math.log(treasuryRunway) / Math.log(1 + stakingRebase) / 3;
 
         return {
             currentIndex: Number(ethers.utils.formatUnits(currentIndex, "gwei")) / 4.5,
@@ -74,15 +67,15 @@ export const loadAppDetails = createAsyncThunk(
             currentBlock,
             circSupply,
             fiveDayRate,
-            // treasuryBalance,
+            treasuryBalance,
             stakingAPY,
             stakingTVL,
             stakingRebase,
             marketPrice,
             currentBlockTime,
             nextRebase,
-            // rfv,
-            // runway,
+            rfv,
+            runway,
         };
     },
 );

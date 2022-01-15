@@ -117,18 +117,18 @@ export const calcBondDetails = createAsyncThunk("bonding/calcBondDetails", async
     const mimPrice = getTokenPrice("BUSD");
     marketPrice = (marketPrice / Math.pow(10, 9)) * mimPrice;
 
-    // try {
-    //     bondPrice = await bondContract.bondPriceInUSD();
+    try {
+        bondPrice = await bondContract.bondPriceInUSD();
 
-    //     if (bond.name === avaxTime.name) {
-    //         const avaxPrice = getTokenPrice("BINANCE");
-    //         bondPrice = bondPrice * avaxPrice;
-    //     }
+        if (bond.name === avaxTime.name) {
+            const avaxPrice = getTokenPrice("BINANCE");
+            bondPrice = bondPrice * avaxPrice;
+        }
 
-    //     bondDiscount = (marketPrice * Math.pow(10, 18) - bondPrice) / bondPrice;
-    // } catch (e) {
-    //     console.log("error getting bondPriceInUSD", e);
-    // }
+        bondDiscount = (marketPrice * Math.pow(10, 18) - bondPrice) / bondPrice;
+    } catch (e) {
+        console.log("error getting bondPriceInUSD", e);
+    }
 
     let maxBondPriceToken = 0;
     const maxBodValue = ethers.utils.parseEther("1");

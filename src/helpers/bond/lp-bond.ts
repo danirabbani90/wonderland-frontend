@@ -36,7 +36,6 @@ export class LPBond extends Bond {
         const valuation = await bondCalculator.valuation(tokenAddress, tokenAmount);
         const markdown = await bondCalculator.markdown(tokenAddress);
         const tokenUSD = (valuation / Math.pow(10, 9)) * (markdown / Math.pow(10, 18));
-
         return tokenUSD;
     }
 
