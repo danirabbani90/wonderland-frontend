@@ -18,7 +18,7 @@ export const mim = new StableBond({
     reserveContractAbi: StableReserveContract,
     networkAddrs: {
         [Networks.AVAX]: {
-            bondAddress: "0xF6EE167024716bE70369CdDbBbC3Ec58A54996ac ",
+            bondAddress: "0xD7db8e8A20Ac89CfeD625Fa512A142BB8fc91E2a ",
             reserveAddress: "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7",
         },
     },
@@ -34,7 +34,7 @@ export const wavax = new CustomBond({
     reserveContractAbi: StableReserveContract,
     networkAddrs: {
         [Networks.AVAX]: {
-            bondAddress: "0x9e374Cd5422bBc5827D68c12E33e43Caa68bb9b4",
+            bondAddress: "0x0A8A11aB00c5BB55168795589c382442794Ba404",
             reserveAddress: "0xae13d989dac2f0debff460ac112a837c89baa7cd",
         },
     },
@@ -50,8 +50,8 @@ export const mimTime = new LPBond({
     reserveContractAbi: LpReserveContract,
     networkAddrs: {
         [Networks.AVAX]: {
-            bondAddress: "0x9623A77AF9A954C0431DE89B56771f08924Dd6dC",
-            reserveAddress: "0xce9A3Da975Ad8c6a40d1DBc1a3Cb124F60B0dDf4",
+            bondAddress: "0x6e0063fEB17D2610f8f6e48634a5815785D7c558",
+            reserveAddress: "0x049cc36e52e43d818315940e81879ef2817c04a3",
         },
     },
     lpUrl: "https://www.traderjoexyz.com/#/pool/0x130966628846BFd36ff31a822705796e8cb8C18D/0xb54f16fB19478766A268F172C9480f8da1a7c9C3",
@@ -66,8 +66,8 @@ export const avaxTime = new CustomLPBond({
     reserveContractAbi: LpReserveContract,
     networkAddrs: {
         [Networks.AVAX]: {
-            bondAddress: "0x7512Aa4c94ef3542179C4b2320f0aA6Ec19fCD2c",
-            reserveAddress: "0xb8a5d105d4f695b460bfbe5a4d94f10c3156a2d6",
+            bondAddress: "0x7B1Ec930AdAc698d9DF4F8E7082DbB48ba399A7f",
+            reserveAddress: "0xd15aadaff8f817181a82a53ca9e660ce8d3ac496",
         },
     },
     lpUrl: "https://www.traderjoexyz.com/#/pool/AVAX/0xb54f16fB19478766A268F172C9480f8da1a7c9C3",
