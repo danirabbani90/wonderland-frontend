@@ -43,7 +43,7 @@ export const wavax = new CustomBond({
 
 export const mimTime = new LPBond({
     name: "mim_time_lp",
-    displayName: "TIME-MIM LP",
+    displayName: "PURPLE-BUSD LP",
     bondToken: "MIM",
     bondIconSvg: MimTimeIcon,
     bondContractABI: LpBondContract,
@@ -59,8 +59,8 @@ export const mimTime = new LPBond({
 
 export const avaxTime = new CustomLPBond({
     name: "avax_time_lp",
-    displayName: "TIME-AVAX LP",
-    bondToken: "AVAX",
+    displayName: "PURPLE-BNB LP",
+    bondToken: "BINANCE",
     bondIconSvg: AvaxTimeIcon,
     bondContractABI: LpBondContract,
     reserveContractAbi: LpReserveContract,

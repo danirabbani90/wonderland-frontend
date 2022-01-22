@@ -103,7 +103,7 @@ function Stake() {
                     <Grid className="stake-card-grid" container direction="column" spacing={2}>
                         <Grid item>
                             <div className="stake-card-header">
-                                <p className="stake-card-header-title">TIME Staking (🎩, 🎩)</p>
+                                <p className="stake-card-header-title">PURPLE Staking (🎩, 🎩)</p>
                                 <RebaseTimer />
                             </div>
                         </Grid>
@@ -252,12 +252,12 @@ function Stake() {
                                     <div className="stake-user-data">
                                         <div className="data-row">
                                             <p className="data-row-name">Your Balance</p>
-                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trim(Number(timeBalance), 4)} TIME</>}</p>
+                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trim(Number(timeBalance), 4)} PURPLE</>}</p>
                                         </div>
 
                                         <div className="data-row">
                                             <p className="data-row-name">Your Staked Balance</p>
-                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trimmedMemoBalance} MEMO</>}</p>
+                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trimmedMemoBalance} SPURPLE</>}</p>
                                         </div>
 
                                         <div className="data-row">

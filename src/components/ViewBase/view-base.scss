@@ -3,8 +3,9 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    background: #121415;
-
+    // background: #121415;
+    background-image: url('../../assets/Background-image/background.png');
+    background-repeat: no-repeat;
     .cubes-top {
         opacity: 0.6;
         position: absolute;
