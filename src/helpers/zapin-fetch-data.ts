@@ -27,7 +27,7 @@ export const zapinData = async (bond: IAllBondData, token: IToken, tokenAmmount:
     const sellToken = token.isAvax ? "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" : token.address;
     const buyToken = bond.getAddressForReserve(network);
 
-    const url = `https://avalanche.api.0x.org/swap/v1/quote?buyToken=${buyToken}&includePriceComparisons=true&intentOnFilling=true&sellAmount=${tokenAmmount}&sellToken=${sellToken}&skipValidation=true&slippagePercentage=${slippage}`;
+    const url = `https://bsc.api.0x.org/swap/v1/quote?buyToken=${buyToken}&includePriceComparisons=true&intentOnFilling=true&sellAmount=${tokenAmmount}&sellToken=${sellToken}&skipValidation=true&slippagePercentage=${slippage}`;
     const { data } = await axios.get(url);
 
     const dataBuyAmount = BigNumber.from(data.buyAmount);
